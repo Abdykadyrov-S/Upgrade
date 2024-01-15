@@ -1,0 +1,300 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>{{category.title}}</h3>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'index' %}">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">{{category.title}}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- Shop Section start -->
+    <section class="section-b-space">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12 ratio_30">
+                    <!-- label and featured section -->
+
+                    <!-- Prodcut setion -->
+                    <div
+                        class="row g-sm-4 g-3 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 gx-sm-4 gx-3 mt-1 custom-gy-5 product-style-2 ratio_asos product-list-section">
+                        
+                        {% for product in products %}
+                        <div>
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    <div class="front">
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img src="{{product.image.url}}"
+                                                class="bg-img blur-up lazyload" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img src="{{product.image.url}}"
+                                                class="bg-img blur-up lazyload" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <div class="rating-details">
+                                        {% for category in product.category.all %}
+                                        <span class="font-light grid-content"> {{ category.title }} &nbsp;|</span>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="main-price">
+                                        <a href="{% url 'product_detail' product.id %}" class="font-default">
+                                            <h4 style="width: 160px;">{{product.title}}</h4>
+                                        </a><br>
+                                        <h3 class="theme-color">{{product.price}} сом</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- Prodcut setion -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Section end -->
+
+    <!-- Quick view modal start -->
+    <div class="modal fade quick-view-modal" id="quick-view">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="row gy-4">
+                        <div class="col-lg-6">
+                            <div class="quick-view-image">
+                                <div class="quick-view-slider">
+                                    <div>
+                                        <img src="{% static 'assets/images/fashion/product/front/4.jpg' %}"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="{% static 'assets/images/fashion/product/front/5.jpg' %}"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="{% static 'assets/images/fashion/product/front/6.jpg' %}"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="{% static 'assets/images/fashion/product/front/7.jpg' %}"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                </div>
+                                <div class="quick-nav">
+                                    <div>
+                                        <img src="{% static 'assets/images/fashion/product/front/4.jpg' %}"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="{% static 'assets/images/fashion/product/front/5.jpg' %}"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="{% static 'assets/images/fashion/product/front/6.jpg' %}"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="{% static 'assets/images/fashion/product/front/7.jpg' %}"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="product-right">
+                                <h2 class="mb-2">Men's Hoodie t-shirt</h2>
+                                <ul class="rating mt-1">
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star"></i>
+                                    </li>
+                                    <li class="font-light">(In stock)</li>
+                                </ul>
+                                <div class="price mt-3">
+                                    <h3>$20.00</h3>
+                                </div>
+                                <div class="color-types">
+                                    <h4>colors</h4>
+                                    <ul class="color-variant mb-0">
+                                        <li class="bg-half-light selected"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-blue1"></li>
+                                        <li class="bg-black1"></li>
+                                    </ul>
+                                </div>
+                                <div class="size-detail">
+                                    <h4>size</h4>
+                                    <ul class="">
+                                        <li class="selected">S</li>
+                                        <li>M</li>
+                                        <li>L</li>
+                                        <li>XL</li>
+                                    </ul>
+                                </div>
+                                <div class="product-details">
+                                    <h4>product details</h4>
+                                    <ul>
+                                        <li>
+                                            <span class="font-light">Style :</span> Hoodie
+                                        </li>
+                                        <li>
+                                            <span class="font-light">Catgory :</span> T-shirt
+                                        </li>
+                                        <li>
+                                            <span class="font-light">Tags:</span> summer, organic
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-btns">
+                                    <button type="button" class="btn btn-solid-default btn-sm"
+                                        data-bs-dismiss="modal">Add to cart</button>
+                                    <button type="button" class="btn btn-solid-default btn-sm"
+                                        data-bs-dismiss="modal">View details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quick view modal end -->
+
+    <!-- Cart Successful Start -->
+    <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="modal-contain">
+                        <div>
+                            <div class="modal-messages">
+                                <i class="fas fa-check"></i> 3-stripes full-zip hoodie successfully added to
+                                you cart.
+                            </div>
+                            <div class="modal-product">
+                                <div class="modal-contain-img">
+                                    <img src="{% static 'assets/images/fashion/instagram/4.jpg' %}" class="img-fluid blur-up lazyload"
+                                        alt="">
+                                </div>
+                                <div class="modal-contain-details">
+                                    <h4>Premier Cropped Skinny Jean</h4>
+                                    <p class="font-light my-2">Yellow, Qty : 3</p>
+                                    <div class="product-total">
+                                        <h5>TOTAL : <span>$1,140.00</span></h5>
+                                    </div>
+                                    <div class="shop-cart-button mt-3">
+                                        <a href="shop-left-sidebar.html"
+                                            class="btn default-light-theme conti-button default-theme default-theme-2 rounded">CONTINUE
+                                            SHOPPING</a>
+                                        <a href="cart.html"
+                                            class="btn default-light-theme conti-button default-theme default-theme-2 rounded">VIEW
+                                            CART</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ratio_asos mt-4">
+                        <div class="container">
+                            <div class="row m-0">
+                                <div class="col-sm-12 p-0">
+                                    <div
+                                        class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space spacing-slider">
+                                        <div>
+                                            <div class="product-box">
+                                                <div class="img-wrapper">
+                                                    <div class="front">
+                                                        <a href="#">
+                                                            <img src="{% static 'assets/images/fashion/product/front/1.jpg' %}"
+                                                                class="bg-img blur-up lazyload" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-details text-center">
+                                                    <div class="rating-details d-block text-center">
+                                                        <span class="font-light grid-content">B&Y Jacket</span>
+                                                    </div>
+                                                    <div class="main-price mt-0 d-block text-center">
+                                                        <h3 class="theme-color">$78.00</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cart Successful End -->
+
+
+    <!-- tap to top Section Start -->
+    <div class="tap-to-top">
+        <a href="shop-no-sidebar.html#home">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- tap to top Section End -->
+
+    {% include 'include/footer.html' %}
+    {% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Статьи и новости</h3>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'index' %}">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Статьи и новости</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- Blog Section Start -->
+    <section class="left-sidebar-section masonary-blog-section section-b-space">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 ratio3_2">
+                    <div class="row g-4">
+                        {% for new in news %}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card blog-categority">
+                                <a href="{% url 'news_detail' new.id %}" class="blog-img">
+                                    <img src="{{new.image.url}}" alt=""
+                                        class="card-img-top blur-up lazyload bg-img">
+                                </a>
+                                <div class="card-body">
+                                    <h5>{{new.title}}</h5>
+                                    <a href="{% url 'news_detail' new.id %}">
+                                        <h2 class="card-title">{{new.descriptions|truncatewords:15}}</h2>
+                                    </a>
+                                    <div class="blog-profile">
+                                        <div class="image-name">
+                                            <h6>{{new.create}}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section End -->
+
+    <!-- tap to top Section Start -->
+    <div class="tap-to-top">
+        <a href="blog-no-sidebar.html#home">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- tap to top Section End -->
+
+    {% include 'include/footer.html' %}
+    {% endblock %}

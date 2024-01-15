@@ -1,0 +1,258 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Наши контакты</h3>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'index' %}">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Наши контакты</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- Contact Section Start -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="materialContainer">
+                        <div class="material-details">
+                            <div class="title title1 title-effect mb-1 title-left">
+                                <h2>Свяжитесь с нами</h2>
+                                <p class="ms-0 w-100">Не стесняйтесь писать нам в любое время</p>
+                            </div>
+                        </div>
+                        <form action="{% url 'contact' %}" method="post">
+                            {% csrf_token %}
+                        <div class="row g-4 mt-md-1 mt-2">
+                            <div class="col-md-6">
+                                <label for="first" class="form-label">ФИО</label>
+                                <input type="text" name="name" class="form-control" id="first" placeholder="Введите имя"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="last" class="form-label">Номер телефона</label>
+                                <input type="text" name="phone" class="form-control" id="last" placeholder="Введите номер телефона"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Причина</label>
+                                <input type="text" name="cause" class="form-control" id="email" placeholder="Причина по которой вы к нам обращаетесь" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email2" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email2" placeholder="Введите почту (email)" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="comment" class="form-label">Сообщение</label>
+                                <textarea name="message" class="form-control" id="comment" rows="5" required></textarea>
+                            </div>
+
+                            <div class="col-auto">
+                                <button class="btn btn-solid-default" type="submit">Отправить</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="contact-details">
+                        <div>
+                            <h2>Наши контакты</h2>
+                            <h5 class="font-light">Свяжитесь с нами и получите бесплатную консультацию</h5>
+                            <a href="https://go.2gis.com/8v81u"><div class="contact-box">
+                                <div class="contact-icon">
+                                    <i data-feather="map-pin"></i>
+                                </div>
+                                <div class="contact-title">
+                                    <h4>{{settings.location}}</h4>  
+                                </div>
+                            </div></a>
+
+                            <a href="tel:{{settings.phone}}"><div class="contact-box">
+                                <div class="contact-icon">
+                                    <i data-feather="phone"></i>
+                                </div>
+                                <div class="contact-title">
+                                    <h4>{{settings.phone}}</h4>
+                                </div>
+                            </div></a>
+
+                            <a href="mailto:{{settings.email}}"><div class="contact-box">
+                                <div class="contact-icon">
+                                    <i data-feather="mail"></i>
+                                </div>
+                                <div class="contact-title">
+                                    <h4>{{settings.email}}</h4>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Map Section start -->
+    <section class="contact-section">
+        <div class="container-fluid">
+            <div class="row gy-4">
+                <div class="col-12 p-0">
+                    <div class="location-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93561.9334980324!2d74.50928936138031!3d42.87684538222154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7dc91b3c881%3A0x492ebaf57cdee27d!2z0JHQuNGI0LrQtdC6!5e0!3m2!1sru!2skg!4v1705244373694!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section End -->
+
+    <!-- Quick view modal start -->
+    <div class="modal fade quick-view-modal" id="quick-view">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="row gy-4">
+                        <div class="col-lg-6">
+                            <div class="quick-view-image">
+                                <div class="quick-view-slider">
+                                    <div>
+                                        <img src="assets/images/electronics/product/1.jpg"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="assets/images/electronics/product/8.jpg"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="assets/images/electronics/product/9.jpg"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="assets/images/electronics/product/8.jpg"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                </div>
+                                <div class="quick-nav">
+                                    <div>
+                                        <img src="assets/images/electronics/product/1.jpg"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="assets/images/electronics/product/8.jpg"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="assets/images/electronics/product/9.jpg"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                    <div>
+                                        <img src="assets/images/electronics/product/8.jpg"
+                                            class="img-fluid blur-up lazyload" alt="product">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="product-right">
+                                <h2 class="mb-2">Smart Watch ERT2</h2>
+                                <h6 class="font-light mb-1">Model LR274</h6>
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star"></i>
+                                    </li>
+                                </ul>
+                                <div class="price mt-3">
+                                    <h3>$20.00</h3>
+                                </div>
+                                <div class="color-types">
+                                    <h4>colors</h4>
+                                    <ul class="color-variant mb-0">
+                                        <li class="bg-half-light selected"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-blue1"></li>
+                                        <li class="bg-black1"></li>
+                                    </ul>
+                                </div>
+                                <div class="product-details">
+                                    <h4>product details</h4>
+                                    <ul>
+                                        <li>
+                                            <span class="font-light">Display type :</span> Analog
+                                        </li>
+                                        <li>
+                                            <span class="font-light">Mechanism:</span> Quartz
+                                        </li>
+                                        <li>
+                                            <span class="font-light">Warranty:</span> 1 year
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-btns">
+                                    <button type="button" class="btn btn-solid-default btn-sm"
+                                        data-bs-dismiss="modal">Add to cart</button>
+                                    <button type="button" class="btn btn-solid-default btn-sm"
+                                        data-bs-dismiss="modal">View details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quick view modal end -->
+
+    <!-- tap to top Section Start -->
+    <div class="tap-to-top">
+        <a href="contact-us.html#home">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- tap to top Section End -->
+
+    {% include 'include/footer.html' %}
+    {% endblock %}

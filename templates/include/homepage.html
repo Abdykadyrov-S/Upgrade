@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{{settings.logo.url}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{settings.logo.url}}">
+    <meta name="theme-color" content="#0163d2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Voxo">
+    <meta name="msapplication-TileImage" content="{{settings.logo.url}}">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Voxo">
+    <meta name="keywords" content="Voxo">
+    <meta name="author" content="Voxo">
+    <link rel="icon" href="{{settings.logo.url}}" type="image/x-icon" />
+    <title>{{ title_page }}</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/bootstrap.css' %}">
+
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/font-awesome.css' %}">
+
+    <!-- feather icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/feather-icon.css' %}">
+
+    <!-- animation css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/animate.css' %}">
+
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/slick/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/slick/slick-theme.css' %}">
+
+    <!-- Theme css -->
+    <link id="color-link" rel="stylesheet" type="text/css" href="{% static 'assets/css/demo1.css' %}">
+    <link id="color-link" rel="stylesheet" type="text/css" href="{% static 'assets/css/demo2.css' %}">
+</head>
+
+<body class="theme-color1 light ltr">
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- tap to top Section End -->
+    <div class="bg-overlay"></div>
+    <!-- latest jquery-->
+    <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+
+    <!-- Add To Home js -->
+    <script src="{% static 'assets/js/pwa.js' %}"></script>
+
+    <!-- Bootstrap js -->
+    <script src="{% static 'assets/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- feather icon js -->
+    <script src="{% static 'assets/js/feather/feather.min.js' %}"></script>
+
+    <!-- lazyload js -->
+    <script src="{% static 'assets/js/lazysizes.min.js' %}"></script>
+
+    <!-- Slick js -->
+    <script src="{% static 'assets/js/slick/slick.js' %}"></script>
+    <script src="{% static 'assets/js/slick/slick-animation.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick/custom_slick.js' %}"></script>
+
+    <!-- notify js -->
+    <script src="{% static 'assets/js/bootstrap/bootstrap-notify.min.js' %}"></script>
+
+    <!-- script js -->
+    <script src="{% static 'assets/js/theme-setting.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+    <script src="{% static 'assets/js/home-script.js' %}"></script>
+
+</body>
+
+</html>

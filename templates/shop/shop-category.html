@@ -1,0 +1,77 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Магазин</h3>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'index' %}">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Магазин</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- Portfolio Section Start -->
+    <section id="portfolio" class="portfolio section-b-space">
+        <div class="container">
+
+            <div class="row g-3 filter-gallery mt-3 content grid ratio_asos">
+                
+                {% for category in categories %}
+                <div class="grid-item col-md-4 col-sm-6 card">
+                    <div class="parent-container parent-container-size">
+                        <a href="{% url 'category_detail' category.slug %}">
+                            <img src="{{category.image.url}}" class="img-fluid bg-img images" alt="" />
+                            <div class="overlay-color">
+                                <div class="overlay-icon">
+                                    <div>
+                                        <h3>{{ category.title }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {%endfor%}
+
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section End -->
+
+    <!-- tap to top Section Start -->
+    <div class="tap-to-top">
+        <a href="portfolio-3-grid.html#home">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- tap to top Section End -->
+
+    {% include 'include/footer.html' %}
+    {% endblock %}

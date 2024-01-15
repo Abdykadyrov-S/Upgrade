@@ -1,0 +1,190 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>О нас</h3>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'index' %}">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">О нас</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- team leader section Start -->
+    <section class="overflow-hidden">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-xl-5 offset-xl-1">
+                    <div class="row g-3">
+                        <div class="col-12 ratio_40">
+                            <div>
+                                <img src="{% static 'assets/images/inner-page/review-image/8.jpg' %}"
+                                    class="img-fluid rounded-3 team-image bg-img" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5">
+                    <div class="about-details">
+                        <div>
+                            <h3>{{about.title|safe}}</h3>
+                            <p>{{about.descriptions|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- team leader section End -->
+
+    <!-- service section start -->
+    <section class="service-section about-page service-style-2 section-b-space">
+        <div class="container">
+            <div class="row g-4 g-sm-3">
+                <div class="col-xl-3 col-sm-6">
+                    <div class="service-wrap">
+                        <div class="service-icon">
+                            <svg>
+                                <use xlink:href="{% static 'assets/svg/icons.svg'%}#customer"></use>
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="mb-2">{{data.title_1|safe}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6">
+                    <div class="service-wrap">
+                        <div class="service-icon">
+                            <svg>
+                                <use xlink:href="{% static 'assets/svg/icons.svg'%}#shop"></use>
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="mb-2">{{data.title_2|safe}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6">
+                    <div class="service-wrap">
+                        <div class="service-icon">
+                            <svg>
+                                <use xlink:href="{% static 'assets/svg/icons.svg'%}#secure-payment"></use>
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="mb-2">{{data.title_3|safe}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6">
+                    <div class="service-wrap">
+                        <div class="service-icon">
+                            <svg>
+                                <use xlink:href="{% static 'assets/svg/icons.svg'%}#return"></use>
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="mb-2">{{data.title_4|safe}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- service section end -->
+
+    <!-- Leader section start -->
+    <section class="section-b-space team-leader-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title title1 text-center">
+                        <h2>Наша команда</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero assumenda hic porro odio
+                            voluptas qui quod sed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-wrapper leader-section slick-lg-space slide-5_1 ratio_asos">
+                {% for team in teams %}
+                <div>
+                    <div class="leader-contain">
+                        <div class="leader-image">
+                            <img src="{{team.image.url}}" class="img-fluid bg-img" alt="">
+                            <ul class="social-media">
+                                {% if team.phone %}
+                                <li>
+                                    <a href="https://wa.me/{{team.phone}}/?text=Здравствуйте, ">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% if team.instagram %}
+                                <li>
+                                    <a href="{{team.instagram}}">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% if team.telegram %}
+                                <li>
+                                    <a href="{{team.telegram}}">
+                                        <i class="fab fa-telegram"></i>
+                                    </a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="leader-contain">
+                            <h3>{{team.name|safe}}</h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- leader section End -->
+
+    <!-- tap to top Section Start -->
+    <div class="tap-to-top">
+        <a href="about-us.html#home">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- tap to top Section End -->
+
+    {% include 'include/footer.html' %}
+    {% endblock %}

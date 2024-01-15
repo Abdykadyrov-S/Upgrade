@@ -1,0 +1,108 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>{{service.title}}</h3>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'index' %}">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">{{service.title}}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+    <!-- Details Blog Section Start -->
+    <section class="masonary-blog-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-9 col-md-8 order-md-1 ratio_square">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="blog-details">
+                                <div class="blog-image-box">
+                                    <img src="{{service.image.url}}" alt="" class="card-img-top">
+                                </div>
+
+                                <div class="blog-detail-contain">
+                                    <span class="font-light">{{service.create}}</span>
+                                    <h2 class="card-title">{{service.title}}</h2>
+                                    <p class="font-light firt-latter">{{service.descriptions|safe}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Details Blog Section End -->
+
+    <!-- related blog start -->
+    <section class="section-b-space block-shadow-space ratio3_2">
+        <div class="container">
+            <h2 style="text-align: center;">Другие услуги</h2><br><br>
+            <div class="slide-4 product-wrapper slick-lg-space">
+                {% for service in service_others %}
+                <div>
+                    <div class="card blog-categority">
+                        <a href="{% url 'service_detail' service.id %}" class="blog-img">
+                            <img src="{{service.image.url}}" alt=""
+                                class="card-img-top blur-up lazyload bg-img">
+                        </a>
+                        <div class="card-body">
+                            <a href="{% url 'service_detail' service.id %}">
+                                <h2 class="card-title">{{service.title}}</h2>
+                            </a>
+                            <div class="blog-profile">
+                                <div class="image-name">
+                                    <h6>{{service.create}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    <!-- related blog end -->
+
+    <!-- tap to top Section Start -->
+    <div class="tap-to-top">
+        <a href="blog-details.html#home">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- tap to top Section End -->
+
+    {% include 'include/footer.html' %}
+    {% endblock %}

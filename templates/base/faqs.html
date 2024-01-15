@@ -1,0 +1,102 @@
+{%extends 'include/homepage.html'%}
+{%load static%}
+{%block content%}
+{% include 'include/header.html' %}
+
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Часто задаваемые вопросы</h3>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'index' %}">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Часто задаваемые вопросы</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+
+		<!-- Page Content -->
+		<div class="page-content">
+
+
+            <!-- FAQ --> 
+            <section class="faqs">
+				{% for faq in faqs %}
+				<div class="faq">
+				 <div class="faq_title">
+					{{faq.question}}
+				</div>
+				<div class="faq_accordion">
+					{{faq.answer}}
+				</div>
+			    </div>
+			    {% endfor %}
+
+			</div>
+			</section>
+            <!-- FAQ end --> 
+            
+		</div>
+        <br><br><br><br><br><br><br><br>
+		<!-- Page Content End -->
+
+        <!-- FAQ Section Start -->
+        <section class="faq-section pt-0">
+            <h2 style="text-align: center;">Не получили ответ на свой вопрос?</h2><br>
+            <div class="container">
+                <div class="row g-lg-5 g-4">
+        
+                    <div class="col-md-4 zi-1">
+                        <!-- <div class="faq-contain"> -->
+                            <!-- <div class="faq-image"> -->
+                                <!-- <img src="{% static 'assets/images/inner-page/faq/community.png' %}" class="img-fluid blur-up lazyload"
+                                    alt=""> -->
+                            <!-- </div> -->
+                            <!-- <h2>Community</h2>
+                            <h5>Join our large community who will help you in any query.</h5> -->
+                        <!-- </div> -->
+                    </div>
+
+                    <div class="col-md-4 zi-1">
+                        <a href="{% url 'contact' %}"><div class="faq-contain">
+                            <div class="faq-image">
+                                <img src="{% static 'assets/images/inner-page/faq/faq.png' %}" class="img-fluid blur-up lazyload" alt="">
+                            </div>
+                            <!-- <h2>Не получили ответ на свой вопрос?</h2><br> -->
+                            <h2>Напишите нам и мы ответим на ваш вопрос</h2><br>
+                            <!-- <h2 style="margin: auto; width: 120px; border-radius: 10px; background-color: blue; color: aliceblue;">Написать</h2> -->
+                        </div></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section End -->
+
+        <!-- footer -->
+		{% include 'include/footer.html' %}
+
+		{%endblock%}
