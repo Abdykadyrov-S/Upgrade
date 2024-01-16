@@ -18,10 +18,18 @@
                             Обнови свой мир технологий!
                         </p>
                         <div class="footer-social">
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                            <a href="https://t.me/AbuAhmadabuAli"><i class="fab fa-telegram"></i></a>
-                            <a href="https://wa.me/+996706070612/?text=Здравствуйте, "><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/barmak.store?igshid=MzMyNGUyNmU2YQ%3D%3D"><i class="fab fa-instagram"></i></a>   
+                            {% if settings.facebook %}
+                            <a href="{{settings.facebook}}"><i class="fab fa-facebook"></i></a>
+                            {% endif %}
+                            {% if settings.telegram %}
+                            <a href="{{settings.telegram}}"><i class="fab fa-telegram"></i></a>
+                            {% endif %}
+                            {% if settings.phone %}
+                            <a href="https://wa.me/{{settings.phone}}/?text=Здравствуйте, "><i class="fab fa-whatsapp"></i></a>
+                            {% endif %}
+                            {% if settings.instagram %}
+                            <a href="{{settings.instagram}}"><i class="fab fa-instagram"></i></a>
+                            {% endif %}
                         </div>
 
                     </div>
