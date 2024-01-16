@@ -1,135 +1,98 @@
 {% load static %}
 
-   <!-- footer start -->
-    <footer class="footer-sm-space">
-        <div class="main-footer">
-            <div class="container">
-                <div class="row gy-4">
+<!-- footer start -->
+<footer class="footer-sm-space">
+    <div class="main-footer">
+        <div class="container">
+            <div class="row gy-4">
 
-                    <div class="col-xl-3 col-lg-4 col-sm-6 d-none d-sm-block">
-                        <div class="footer-contact">
-                            <div class="brand-logo">
-                                <a href="{% url 'index' %}" class="footer-logo">
-                                    <svg class="svg-icon">
-                                        <use class="fill-color" xlink:href="{% static 'assets/svg/icons.svg'#logo"></use>
-                                    </svg>
-                                    <img src="{{settings.logo.url}}" style="width: 100px;border-radius: 10px;" class="img-fluid blur-up lazyload" alt="logo">
-                                </a>
-                            </div>
-                            
+                <div class="col-xl-3 col-lg-4 col-sm-8 d-none d-sm-block">
+                    <div class="footer-contact">
+                        <div class="brand-logo">
+                            <a href="{% url 'index' %}" class="footer-logo">
+                                <img src="{{settings.logo.url}}" style="width: 100px;border-radius: 10px;"
+                                    class="img-fluid blur-up lazyload" alt="logo">
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-6">
-                        <div class="footer-links">
-                            <div class="footer-title">
-                                <h3>About us</h3>
-                            </div>
-                            <div class="footer-content">
-                                <ul>
-                                    <li>
-                                        <a href="{% url 'index' %}" class="font-dark">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-left-sidebar.html" class="font-dark">Shop</a>
-                                    </li>
-                                    <li>
-                                        <a href="about-us.html" class="font-dark">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-left-sidebar.html" class="font-dark">Blog</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-left-sidebar.html" class="font-dark">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <p style="font-size: 18px;">
+                            Обнови свой мир технологий!
+                        </p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                            <a href="https://t.me/AbuAhmadabuAli"><i class="fab fa-telegram"></i></a>
+                            <a href="https://wa.me/+996706070612/?text=Здравствуйте, "><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/barmak.store?igshid=MzMyNGUyNmU2YQ%3D%3D"><i class="fab fa-instagram"></i></a>   
                         </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-links">
-                            <div class="footer-title">
-                                <h3>New Categories</h3>
-                            </div>
-                            <div class="footer-content">
-                                <ul>
-                                    <li>
-                                        <a href="shop-left-sidebar.html" class="font-dark">Latest Shoes</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-left-sidebar.html" class="font-dark">Branded Jeans</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-left-sidebar.html" class="font-dark">New Jackets</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-left-sidebar.html" class="font-dark">Colorfull Hoodies</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-left-sidebar.html" class="font-dark">Shiner Goggles</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-links">
-                            <div class="footer-title">
-                                <h3>Get Help</h3>
-                            </div>
-                            <div class="footer-content">
-                                <ul>
-                                    <li>
-                                        <a href="user-dashboard.html" class="font-dark">Your Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="user-dashboard.html" class="font-dark">Your Account</a>
-                                    </li>
-                                    <li>
-                                        <a href="order-tracking.html" class="font-dark">Track Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="wishlist.html" class="font-dark">Your Wishlist</a>
-                                    </li>
-                                    <li>
-                                        <a href="faq.html" class="font-dark">Shopping FAQs</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="footer-contact">
-                            <div class="footer-title">
-                                <h3>About us</h3>
-                            </div><br>
-                            <ul class="contact-lists">
-                                <li>
-                                    <span><b>phone:</b> <span class="font-light"> + 185659635</span></span>
 
-                                </li>
-                                <li>
-                                    <span><b>Address:</b><span class="font-light"> 1418 Riverwood Drive, Suite 3245
-                                            Cottonwood, CA 96052, United States</span></span>
-                                </li>
-                                <li>
-                                    <span><b>Email:</b><span class="font-light"> Voxo123@gmail.com</span></span>
-
-                                </li>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-8">
+                    <div class="footer-links">
+                        <div class="footer-title">
+                            <h3>Все страницы</h3>
+                        </div>
+                        <div class="footer-content">
+                            <ul>
+                                <li><a href="{% url 'index' %}" class="font-dark">Главная страница</a></li>
+                                <li><a href="{% url 'about' %}" class="font-dark">О нас</a></li>
+                                <li><a href="{% url 'faqs' %}" class="font-dark">Часто задаваемые вопросы</a></li>
+                                <li><a href="{% url 'category' %}" class="font-dark">Магазин</a></li>
+                                <li><a href="{% url 'service' %}" class="font-dark">Наши услуги</a></li>
+                                <li><a href="{% url 'news' %}" class="font-dark">Новости</a></li>
+                                <li><a href="{% url 'contact' %}" class="font-dark">Контакты</a></li>
                             </ul>
                         </div>
                     </div>
-                    
                 </div>
-            </div>
-        </div>
-        <div class="sub-footer">
-            <div class="container">
-                <div class="row gy-3">
-                    <div class="col-md-6">
-                        <p> &copy; Copyright 2023 {{settings.title}} | Все Права Защищены | <a href="https://codexstudio.site/" class="primary-hover"> Сделано командой Codex-studio </a></p>
+
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-8">
+                    <div class="footer-links">
+                        <div class="footer-title">
+                            <h3>Категории</h3>
+                        </div>
+                        <div class="footer-content">
+                            <ul>
+                                {% for category in footer_categories %}
+                                <li><a href="{% url 'category_detail' category.slug %}" class="font-dark">{{ category.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="col-xl-3 col-lg-4 col-md-8">
+                    <div class="footer-contact">
+                        <div class="footer-title">
+                            <h3>Свяжитесь с нами</h3>
+                        </div><br>
+                        <ul class="contact-lists">
+                            <li>
+                                <span> <span class="font-light">Если у вас остались вопросы позвоните кликнув</span> <br>
+                                <b><a href="tel:{{settings.phone}}">{{settings.phone}}</a></b></span>
+                            </li>
+                            <li>
+                                <span><span class="font-light">Наша почта всегда ждет сообщения от вас</span><br><b><a href="mailto:{{settings.email}}">{{settings.email}}</a></b><span>
+                            </li>
+                            <li>
+                                <span><span class="font-light">Мы в 2 Gis</span><br><b><a href="https://go.2gis.com/8v81u" target="_blank">{{settings.location}}</a></b></span>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </footer>
-    <!-- footer end -->
+    </div>
+    <div class="sub-footer">
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-md-12   ">
+                    <p class="text-center "> &copy; Copyright 2023 {{settings.title}} | Все Права Защищены | <a
+                            href="https://codexstudio.site/" class="primary-hover"> Сделано командой Codex-studio </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->

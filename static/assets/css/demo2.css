@@ -14001,3 +14001,10 @@ hr {
 .make_center {
   margin: auto;
 }
+
+.footer-social a{
+  background: #0163d2;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}

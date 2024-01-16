@@ -15,7 +15,7 @@ def index(request):
     service = Service.objects.latest('id')
 
     services = Service.objects.all().order_by('?')
-    footer_categories = Category.objects.all().order_by('?')
+    footer_categories = Category.objects.all().order_by('?')[:6]
     news = News.objects.all().order_by('?')
     
     products = Product.objects.all().order_by('?')
@@ -29,7 +29,7 @@ def about(request):
     settings = Settings.objects.latest('id')
     about = About.objects.latest('id')
     best_products = Product.objects.all().order_by('?')
-    footer_categories = Category.objects.all().order_by('?')
+    footer_categories = Category.objects.all().order_by('?')[:6]
     data = Data.objects.latest('id')
     teams = Team.objects.all().order_by('?')
     return render(request, "base/about.html",locals())
@@ -38,7 +38,7 @@ def contact(request):
     title_page = "Контакты"
     settings = Settings.objects.latest('id')
     about = About.objects.latest('id')
-    footer_categories = Category.objects.all().order_by('?')
+    footer_categories = Category.objects.all().order_by('?')[:6]
     if request.method =="POST":
         name = request.POST.get('name')
         phone = request.POST.get('phone')
